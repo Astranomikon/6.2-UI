@@ -14,7 +14,12 @@ public class TakeHealButton : MonoBehaviour
 
     public void OnButtonClick()
     {
-        _valueChanger.NewValue(_slider, _slider.value + _changeValue);
+        float value = _slider.value + _changeValue;
+
+        if (value > _slider.maxValue)
+            value = _slider.maxValue;
+
+        _valueChanger.NewValue(_slider, value);
     }
 
     private void Start()
