@@ -135,10 +135,9 @@ GameObject:
   - component: {fileID: 28575598}
   - component: {fileID: 28575597}
   - component: {fileID: 28575596}
-  - component: {fileID: 28575595}
-  - component: {fileID: 28575594}
-  - component: {fileID: 28575593}
+  - component: {fileID: 28575601}
   - component: {fileID: 28575600}
+  - component: {fileID: 28575593}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -158,32 +157,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84273f7b4b8b54a4ea9e0dfc0f0cc7c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &28575594
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 28575592}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 11e13dd2a7bc9fb47af93c02885d0743, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _slider: {fileID: 349637238}
---- !u!114 &28575595
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 28575592}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 178d44a2de2e2bc41a42ff76eea7fc5e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _slider: {fileID: 349637238}
 --- !u!114 &28575596
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -280,6 +253,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _slider: {fileID: 349637238}
   _text: {fileID: 679089261}
+--- !u!114 &28575601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 28575592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bd4103c8b18de142b0fa78aecbca6c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _slider: {fileID: 349637238}
 --- !u!1 &48834348
 GameObject:
   m_ObjectHideFlags: 0
@@ -612,9 +598,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 28575595}
-        m_TargetAssemblyTypeName: TakeHealButton, Assembly-CSharp
-        m_MethodName: OnButtonClick
+      - m_Target: {fileID: 28575601}
+        m_TargetAssemblyTypeName: HealthChanger, Assembly-CSharp
+        m_MethodName: OnButtonTakeHealClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1009,9 +995,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 28575594}
-        m_TargetAssemblyTypeName: TakeDamageButton, Assembly-CSharp
-        m_MethodName: OnButtonClick
+      - m_Target: {fileID: 28575601}
+        m_TargetAssemblyTypeName: HealthChanger, Assembly-CSharp
+        m_MethodName: OnButtonTakeDamageClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
