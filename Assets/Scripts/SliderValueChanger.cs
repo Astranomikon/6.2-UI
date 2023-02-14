@@ -5,25 +5,29 @@ using UnityEngine.UI;
 
 public class SliderValueChanger : MonoBehaviour
 {
-    private Slider _slider;
+    [SerializeField ] private Slider _slider;
     private float _deltaValue = 10;
     private Coroutine _coroutine;
+    private float _targetValue;
 
-    public void NewValue(Slider slider, float value)
+    public void NewValue()
     {
-        _slider = slider;
-
         if (_coroutine != null)
             StopCoroutine(_coroutine);
 
-        _coroutine = StartCoroutine(ChangeValue(value));
+        _coroutine = StartCoroutine(ChangeValue());
     }
 
-    private IEnumerator ChangeValue(float value)
+    public void SetTargetValue(float value)
     {
-        while(value != _slider.value)
+        _targetValue = value;
+    }
+
+    private IEnumerator ChangeValue()
+    {
+        while(_targetValue != _slider.value)
         {
-            _slider.value = Mathf.MoveTowards(_slider.value, value, _deltaValue * Time.deltaTime);
+            _slider.value = Mathf.MoveTowards(_slider.value, _targetValue, _deltaValue * Time.deltaTime);
             yield return null;
         }
     }
