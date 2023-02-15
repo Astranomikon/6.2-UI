@@ -3,15 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SliderValueChanger : MonoBehaviour
+public class SliderValue : MonoBehaviour
 {
-    [SerializeField ] private Slider _slider;
+    [SerializeField] private Slider _slider;
     private float _deltaValue = 10;
     private Coroutine _coroutine;
     private float _targetValue;
 
     public void NewValue()
     {
+        Debug.Log(_targetValue);
+
         if (_coroutine != null)
             StopCoroutine(_coroutine);
 
