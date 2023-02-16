@@ -3,26 +3,39 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(HealthChange))]
+
 public class SliderValue : MonoBehaviour
 {
     [SerializeField] private Slider _slider;
+
+    private HealthChange healthChange;
     private float _deltaValue = 10;
     private Coroutine _coroutine;
     private float _targetValue;
 
-    public void NewValue()
+    private void Start()
     {
-        Debug.Log(_targetValue);
-
-        if (_coroutine != null)
-            StopCoroutine(_coroutine);
-
-        _coroutine = StartCoroutine(ChangeValue());
+        healthChange = GetComponent<HealthChange>();
     }
 
     public void SetTargetValue(float value)
     {
         _targetValue = value;
+        healthChange.Changed += NewValue;
+    }
+
+    private void NewValue()
+    {
+        Debug.Log(_targetValue);
+
+        if (_coroutine != null)
+        {
+            StopCoroutine(_coroutine);
+            healthChange.Changed -= NewValue;
+        }
+
+        _coroutine = StartCoroutine(ChangeValue());
     }
 
     private IEnumerator ChangeValue()
