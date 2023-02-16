@@ -17,6 +17,11 @@ public class SliderValue : MonoBehaviour
         _player.Changed += NewValue;
     }
 
+    private void OnDestroy()
+    {
+        _player.Changed -= NewValue;
+    }
+
     private void NewValue()
     {
         Debug.Log(_player.Health);
