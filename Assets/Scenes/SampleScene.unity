@@ -135,7 +135,6 @@ GameObject:
   - component: {fileID: 28575598}
   - component: {fileID: 28575597}
   - component: {fileID: 28575596}
-  - component: {fileID: 28575601}
   - component: {fileID: 28575600}
   - component: {fileID: 28575593}
   m_Layer: 5
@@ -158,6 +157,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _slider: {fileID: 349637238}
+  _player: {fileID: 750362398}
 --- !u!114 &28575596
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -254,19 +254,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _slider: {fileID: 349637238}
   _text: {fileID: 679089261}
---- !u!114 &28575601
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 28575592}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1bd4103c8b18de142b0fa78aecbca6c9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _player: {fileID: 750362398}
 --- !u!1 &48834348
 GameObject:
   m_ObjectHideFlags: 0
@@ -599,9 +586,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 28575601}
-        m_TargetAssemblyTypeName: HealthChange, Assembly-CSharp
-        m_MethodName: ButtonHeal
+      - m_Target: {fileID: 750362398}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: TakeHeal
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -996,9 +983,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 28575601}
-        m_TargetAssemblyTypeName: HealthChange, Assembly-CSharp
-        m_MethodName: ButtonDamage
+      - m_Target: {fileID: 750362398}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: TakeDamage
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
